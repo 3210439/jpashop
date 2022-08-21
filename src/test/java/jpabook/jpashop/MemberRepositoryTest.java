@@ -24,23 +24,23 @@ public class MemberRepositoryTest {
     @Transactional
     public void testMember() throws Exception {
         //given
-        Member member = new Member();
-        member.setUsername("memberA");
-
-        //when
-        Long savedId = memberRepository.save(member);
-        Member findMember = memberRepository.find(savedId);
-
-        System.out.println(savedId);
-        System.out.println(member.getId());
-
-
-        //then
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-        Assertions.assertThat(findMember).isEqualTo(member);
-        // id 값이 같으면 같은 엔티티로 본다.
-        System.out.println("findMember == member: " + (findMember == member));
+//        Member member = new Member();
+//        member.up("memberA");
+//
+//        //when
+//        Long savedId = memberRepository.save(member);
+//        Member findMember = memberRepository.find(savedId);
+//
+//        System.out.println(savedId);
+//        System.out.println(member.getId());
+//
+//
+//        //then
+//        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
+//        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+//        Assertions.assertThat(findMember).isEqualTo(member);
+//        // id 값이 같으면 같은 엔티티로 본다.
+//        System.out.println("findMember == member: " + (findMember == member));
 
     }
 }
