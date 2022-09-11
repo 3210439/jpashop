@@ -26,8 +26,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'junit:junit:4.13.1'
 	implementation 'junit:junit:4.13.1'
-    implementation 'android.arch.persistence.room:runtime:1.1.1'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
     compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
