@@ -1,0 +1,21 @@
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+
+# show_sql은 System.out.println를 통해서 로그를 찍는다. 실제 실행환경에서는 사용해서는 안된다.
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
