@@ -52,7 +52,7 @@ public class OrderServiceTest {
     public void 상품주문_재고수량초과() throws Exception{
         // given
         Member member = createMember();
-        Item item = createBook("시골 JPA", 10, 10000);
+        Book item = createBook("시골 JPA", 10, 10000);
 
         int orderCount = 11;
 
@@ -66,10 +66,20 @@ public class OrderServiceTest {
     @Test
     public void 주문취소() throws Exception {
         // given
+        Member member = createMember();
+        Book item = createBook("시골 JPA", 10, 10000);
+
+        int orderCount = 2;
+        Long orderId = orderService.order(member.getId(), item.getId(), orderCount);
 
         // when
+        orderService.cancelOrder(orderId);
 
         // then
+        Order getORder = orderRepository.findOne(orderId);
+
+        assertEquals("주문 취소시 상태는 CANCEL 이다.", OrderStatus.CANCEL, getORder.getStatus());
+        assertEquals("주문이 취소된 상품은 그만큼 재고가 증가해야 한다.", 10, item.getStockQuantity());
     }
 
     @Test
@@ -84,8 +94,8 @@ public class OrderServiceTest {
 
     // command + option + p
     // ctrl + alt + p 를 통해서 자동으로 파라미터로 변경하는 단축키를 사용해보자.
-    private Item createBook(String name, int quantity, int orderPrice) {
-        Item book = new Book();
+    private Book createBook(String name, int quantity, int orderPrice) {
+        Book book = new Book();
         book.setName(name);
         book.setPrice(orderPrice);
         book.setStockQuantity(quantity);
