@@ -34,7 +34,7 @@
 
 ---
 
-![Untitled](imagesUntitled%201.png)
+![Untitled](imagesUntitled 1.png)
 
 - 상품을 보면 감독, 작가, 예술가 등등 여러 분야의 정보가 포함되어 있습니다. 그림, 책, 영화 등 여러 종류의 아이템을 고려하여 Single Table 방식으로 제작 되었습니다.
 - ManyToMany(N:M) 관계가 2개정도 보입니다. 주문과 상품 그리고 상품과 카테고리가 ManyToMnay 관계입니다. ManyToMany의 관계의 경우 직접 서로 참조하는 것 보다는 중간 테이블을 두어서 oneToMany, ManyToOne으로 연결하는 것이 좋습니다. 예를 들어 주문 상품만에 필요한 컬럼이 생겨 추가적인 컬럼이 필요할 수 있고 실무에서는 @ManyToMany 어노테이션을 사용해서는 안된다.
